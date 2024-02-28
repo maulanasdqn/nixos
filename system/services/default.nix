@@ -1,1 +1,4 @@
-{ imports = [ ./xserver ./pipewire ./mysql ./openssh ./printing ./redis ]; }
+{
+  imports =
+    [ ./xserver ./pipewire ./mysql ./openssh ./printing ./redis ./postgresql ];
+}
