@@ -5,9 +5,7 @@ static const unsigned int snap            = 0;
 static const int showbar                  = 1;
 static const int topbar                   = 0;
 static const char *fonts[]                = { 
-  "FiraCode Nerd Font:size=12",
-  "icomoon:size=14",
-  "FontAwesome:size=14"
+  "Hack Nerd Font Mono:size=12",
 };
 static const char dmenufont[]             = "Hack Nerd Font Mono:size=12";   /* set dmenu font */
 static const unsigned int systraypinning  = 1;                              /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
@@ -18,16 +16,16 @@ static const int showsystray              = 1;                              /* 0
 static const int startwithgaps[]          = { 1 };	                        /* 1 means gaps are used by default, this can be customized for each tag */
 static const unsigned int gappx[]         = { 16 };                         /* default gap between windows in pixels, this can be customized for each tag */
 static const int gapsforone	              = 1;	                            /* 1 enable gaps when only one window is open */
-static const char col_gray1[]             = "#2E3440";
-static const char col_gray2[]             = "#4C566A";
-static const char col_gray3[]             = "#D8DEE9";
-static const char col_gray4[]             = "#2E3440";
-static const char col_cyan[]              = "#D8DEE9";
+static const char col_gray1[]             = "#e0def4";
+static const char col_gray2[]             = "#31748f";
+static const char col_gray3[]             = "#191724";
+static const char col_gray4[]             = "#e0def4";
+static const char col_cyan[]              = "#191724";
 
-static const char col_brown_400[]         = "#1B512D";
+static const char col_brown_400[]         = "#c4a7e7";
 static const char col_brown_300[]         = "#1C7C54";
-static const char col_brown_200[]         = "#73E2A7";
-static const char col_brown_100[]         = "#DEF4C6";
+static const char col_brown_200[]         = "#ebbcba";
+static const char col_brown_100[]         = "#191724";
                                           
 static const char *colors[][3]            = {
 	[SchemeNorm] = { col_brown_400, col_brown_200, col_brown_100 },

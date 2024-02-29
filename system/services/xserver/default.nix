@@ -4,11 +4,13 @@
     videoDrivers = [ "nvidia" ];
     windowManager = { dwm.enable = true; };
     displayManager = {
-      gdm.enable = true;
+      startx.enable = true;
       autoLogin.enable = true;
       autoLogin.user = "ms";
     };
-    desktopManager = { gnome.enable = true; };
+    desktopManager = {
+      #gnome.enable = true;
+    };
     xkb = {
       layout = "us";
       options = "caps:swapescape";

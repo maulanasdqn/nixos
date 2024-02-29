@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Hack Nerd Font Mono:pixelsize=18:antialias=true:autohint=true";
-static int borderpx = 12;
+static char *font = "Hack Nerd Font Mono:pixelsize=12:antialias=true:autohint=true";
+static int borderpx = 3;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -140,8 +140,8 @@ static const char *colorname[] = {
 	//"#555555",
 	//"gray90", /* default foreground colour */
 	//"black", /* default background colour */
-  "#d8dee9", /* default foreground colour */
-  "#2e3440", /* default background colour */
+  "#e0def4", /* default foreground colour */
+  "#191724", /* default background colour */
 };
 
 
