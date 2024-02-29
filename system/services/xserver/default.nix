@@ -2,7 +2,7 @@
   services.xserver = {
     enable = true;
     videoDrivers = [ "nvidia" ];
-    windowManager = { };
+    windowManager = { dwm.enable = true; };
     displayManager = {
       gdm.enable = true;
       autoLogin.enable = true;

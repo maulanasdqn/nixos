@@ -5,7 +5,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  nixpkgs.overlays = import ../overlays;
+  nixpkgs.overlays = [ (import ../overlays) ];
 
   environment.systemPackages = with pkgs; [ vim curl git wget ];
 

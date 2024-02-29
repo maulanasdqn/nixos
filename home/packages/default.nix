@@ -19,5 +19,6 @@
     mysql-workbench
     gparted
     neofetch
+    dmenu
   ];
 }
