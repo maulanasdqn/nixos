@@ -2,14 +2,8 @@
 
 {
   home.packages = with pkgs; [
-    bun
-    nodejs
-    nodePackages.npm
-    nodePackages.pnpm
-    nodePackages.yarn
     eza
     htop
-    postgresql
     fd
     android-tools
     rubber

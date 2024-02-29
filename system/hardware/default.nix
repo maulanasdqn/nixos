@@ -24,6 +24,11 @@
 
   networking.useDHCP = lib.mkDefault true;
 
+  hardware.nvidia = {
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.production;
+  };
+
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode =
     lib.mkDefault config.hardware.enableRedistributableFirmware;
