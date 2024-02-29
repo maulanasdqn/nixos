@@ -40,5 +40,6 @@
     ./shell
     ./init
     ./services
+    ./ld
   ];
 }

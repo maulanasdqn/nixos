@@ -1,20 +1,20 @@
 #include <X11/XF86keysym.h>
 
-static const unsigned int borderpx        = 5;
+static const unsigned int borderpx        = 2;
 static const unsigned int snap            = 0;
 static const int showbar                  = 1;
 static const int topbar                   = 0;
 static const char *fonts[]                = { 
-  "Hack Nerd Font Mono:size=12",
+  "Hack Nerd Font Mono:size=8",
 };
-static const char dmenufont[]             = "Hack Nerd Font Mono:size=12";   /* set dmenu font */
+static const char dmenufont[]             = "Hack Nerd Font Mono:size=8";   /* set dmenu font */
 static const unsigned int systraypinning  = 1;                              /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayonleft   = 1;   	                          /* 0: systray in the right corner, >0: systray on left of status text */
 static const unsigned int systrayspacing  = 2;                              /* systray spacing */
 static const int systraypinningfailfirst  = 1;                              /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray              = 1;                              /* 0 means no systray */
 static const int startwithgaps[]          = { 1 };	                        /* 1 means gaps are used by default, this can be customized for each tag */
-static const unsigned int gappx[]         = { 16 };                         /* default gap between windows in pixels, this can be customized for each tag */
+static const unsigned int gappx[]         = { 6 };                         /* default gap between windows in pixels, this can be customized for each tag */
 static const int gapsforone	              = 1;	                            /* 1 enable gaps when only one window is open */
 static const char col_gray1[]             = "#e0def4";
 static const char col_gray2[]             = "#31748f";
@@ -22,8 +22,8 @@ static const char col_gray3[]             = "#191724";
 static const char col_gray4[]             = "#e0def4";
 static const char col_cyan[]              = "#191724";
 
-static const char col_brown_400[]         = "#c4a7e7";
-static const char col_brown_300[]         = "#1C7C54";
+static const char col_brown_400[]         = "#e0def4";
+static const char col_brown_300[]         = "#191724";
 static const char col_brown_200[]         = "#ebbcba";
 static const char col_brown_100[]         = "#191724";
                                           
@@ -34,7 +34,7 @@ static const char *colors[][3]            = {
 
 static const int lockfullscreen           = 0;                              /* 1 will force focus on the fullscreen window */
 
-static const char *tags[] = { "", "", "", "", "", "", "", ""};
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9"};
 
 static const char *const autostart[] = {
 	"nm-applet", NULL,
