@@ -20,5 +20,10 @@
     gparted
     neofetch
     dmenu
+    figma-linux
+    pavucontrol
+    flameshot
+    feh
+    nitrogen
   ];
 }
