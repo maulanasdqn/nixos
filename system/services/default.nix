@@ -1,6 +1,7 @@
 {
   imports = [
     ./xserver
+    ./greetd
     ./pipewire
     ./mysql
     ./openssh
