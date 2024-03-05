@@ -2,6 +2,11 @@
 
 {
   home.packages = with pkgs; [
+    nodejs
+    bun
+    nodePackages.npm
+    nodePackages.yarn
+    nodePackages.pnpm
     eza
     htop
     fd
@@ -11,19 +16,25 @@
     luajitPackages.lua-lsp
     vscode
     slack
-    google-chrome
-    microsoft-edge
     xclip
     unzip
     unrar
+    brave
     mysql-workbench
     gparted
     neofetch
+    zoom-us
     dmenu
     figma-linux
     pavucontrol
     flameshot
-    feh
     nitrogen
+    obs-studio
+    pcmanfm
+    mpv
+    dunst
+    davinci-resolve
+    guvcview
+    pcsx2
   ];
 }
