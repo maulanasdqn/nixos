@@ -4,6 +4,8 @@
     bun
     nodejs
     nodePackages.yarn
+    nodePackages.npm
     nodePackages.pnpm
+    stdenv.cc.cc.lib
   ];
 }

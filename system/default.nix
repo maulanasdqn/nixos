@@ -10,6 +10,7 @@
   environment = {
     variables = { EDITOR = "vim"; };
     systemPackages = with pkgs; [ vim curl git wget ];
+    sessionVariables = { LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib"; };
   };
 
   programs.gnupg.agent = {
