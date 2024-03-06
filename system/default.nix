@@ -4,11 +4,10 @@
 
   nixpkgs = {
     config = { allowUnfree = true; };
-    overlays = [ (import ./overlays) ];
+    overlays = [ (import ../overlays) ];
   };
 
   environment = {
-    terminal = "st-256color";
     variables = { EDITOR = "vim"; };
     systemPackages = with pkgs; [ vim curl git wget ];
   };

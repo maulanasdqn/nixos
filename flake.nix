@@ -13,8 +13,8 @@
   outputs = { nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations = {
       beast = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
         specialArgs = { inherit inputs; };
+        system = "x86_64-linux";
         modules = [
           ./system
           home-manager.nixosModules.home-manager
