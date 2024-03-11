@@ -29,6 +29,10 @@
     "sudo nixos-rebuild switch --flake ~/.config/nixos#beast --impure";
   programs.zsh.shellAliases.clean = "sudo nix-collect-garbage -d";
   programs.zsh.shellAliases.ls = "eza";
+  programs.zsh.shellAliases.pn = "pnpm";
+  programs.zsh.shellAliases.px = "pnpx";
+  programs.zsh.shellAliases.yr = "yarn";
+  programs.zsh.shellAliases.np = "npm";
   programs.zsh.shellAliases.lsa = "eza -a";
   programs.zsh.shellAliases.ll = "eza -l";
   programs.zsh.shellAliases.c = "clear";

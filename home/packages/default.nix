@@ -11,7 +11,6 @@
     htop
     fd
     android-tools
-    rubber
     ripgrep
     luajitPackages.lua-lsp
     vscode
@@ -20,6 +19,9 @@
     unzip
     unrar
     brave
+    discord
+    google-chrome
+    spotify
     mysql-workbench
     gparted
     neofetch

@@ -7,13 +7,11 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs: {
+  outputs = { nixpkgs, home-manager, ... }: {
     nixosConfigurations = {
       beast = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
         system = "x86_64-linux";
         modules = [
           ./system

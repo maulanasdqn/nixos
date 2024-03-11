@@ -1,9 +1,15 @@
 { pkgs, ... }: {
 
-  virtualisation.docker.enable = true;
+  virtualisation = {
+    libvirtd = { enable = true; };
+    docker = { enable = true; };
+  };
 
   nixpkgs = {
-    config = { allowUnfree = true; };
+    config = {
+      allowUnfree = true;
+      permittedInsecurePackages = [ "nix-2.15.3" ];
+    };
     overlays = [ (import ../overlays) ];
   };
 
@@ -20,7 +26,7 @@
 
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
-    trusted-users = [ "ms" ];
+    trusted-users = [ "ms" "root" ];
     substituters = [
       "https://cache.nixos.org"
       "https://cache.komunix.org/"
@@ -39,7 +45,6 @@
 
   imports = [
     ./hardware
-    ./hyprland
     ./boot
     ./network
     ./locale
