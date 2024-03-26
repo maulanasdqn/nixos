@@ -16,32 +16,26 @@ static const int showsystray              = 1;                              /* 0
 static const int startwithgaps[]          = { 1 };	                        /* 1 means gaps are used by default, this can be customized for each tag */
 static const unsigned int gappx[]         = { 6 };                         /* default gap between windows in pixels, this can be customized for each tag */
 static const int gapsforone	              = 1;	                            /* 1 enable gaps when only one window is open */
-static const char col_gray1[]             = "#191724";
-static const char col_gray2[]             = "#31748f";
-static const char col_gray3[]             = "#191724";
+
+static const char col_gray1[]             = "#6e6a86";
+static const char col_gray2[]             = "#ebbcba";
+static const char col_gray3[]             = "#908caa";
 static const char col_gray4[]             = "#191724";
 static const char col_cyan[]              = "#191724";
 
-static const char col_brown_400[]         = "#e0def4";
-static const char col_brown_300[]         = "#ebbcba";
-static const char col_brown_200[]         = "#ebbcba";
-static const char col_brown_100[]         = "#191724";
+static const char col_brown_400[]         = "#ebbcba";
+static const char col_brown_300[]         = "#6e6a86";
+static const char col_brown_200[]         = "#191724";
+static const char col_brown_100[]         = "#ebbcba";
                                           
 static const char *colors[][3]            = {
-	[SchemeNorm] = { col_brown_400, col_brown_200, col_brown_100 },
-	[SchemeSel]  = { col_brown_400, col_brown_100,  col_brown_200  },
+	[SchemeNorm] = { col_brown_200, col_brown_400, col_brown_300 },
+	[SchemeSel]  = { col_brown_200, col_brown_400,  col_brown_200  },
 };
 
 static const int lockfullscreen           = 0;                              /* 1 will force focus on the fullscreen window */
 
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9"};
-
-static const char *const autostart[] = {
-	 "nm-applet", NULL,
-  "flameshot", NULL,
-  "dwm-status", "default.toml", NULL,
-  NULL
-};
 
 static const Rule rules[] = {
 	/* xprop(1):

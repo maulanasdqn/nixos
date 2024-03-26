@@ -15,7 +15,7 @@
 
   environment = {
     variables = { EDITOR = "vim"; };
-    systemPackages = with pkgs; [ vim curl git wget ];
+    systemPackages = with pkgs; [ vim curl git wget xorg.xbacklight ];
     sessionVariables = { LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib"; };
   };
 

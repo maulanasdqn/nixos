@@ -34,9 +34,12 @@
     obs-studio
     pcmanfm
     mpv
-    dunst
     davinci-resolve
     guvcview
     pcsx2
+    gcc
+    distrobox
+    stdenv.cc.cc.lib
+    slstatus
   ];
 }

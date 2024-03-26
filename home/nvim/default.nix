@@ -165,7 +165,6 @@
       fd
       golangci-lint
       eza
-      rnix-lsp
       prettierd
       emmet-ls
       luajitPackages.lua-lsp
