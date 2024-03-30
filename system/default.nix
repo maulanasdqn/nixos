@@ -24,6 +24,12 @@
     enableSSHSupport = true;
   };
 
+  fileSystems."/home/ms/HDD" = {
+    device = "/dev/sda1";
+    fsType = "ntfs-3g";
+    options = [ "rw" "uid=1000" ];
+  };
+
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
     trusted-users = [ "ms" "root" ];

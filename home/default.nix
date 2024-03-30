@@ -14,5 +14,6 @@
     ./st
     ./picom
     ./hyprland
+    ./dunst
   ];
 }

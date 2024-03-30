@@ -29,7 +29,6 @@
     dmenu
     figma-linux
     pavucontrol
-    flameshot
     nitrogen
     obs-studio
     pcmanfm
@@ -41,5 +40,6 @@
     distrobox
     stdenv.cc.cc.lib
     slstatus
+    gscreenshot
   ];
 }
