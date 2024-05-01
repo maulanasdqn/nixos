@@ -15,5 +15,6 @@
     ./picom
     ./hyprland
     ./dunst
+    ./foot
   ];
 }

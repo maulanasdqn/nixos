@@ -3,31 +3,23 @@
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.initrd.availableKernelModules =
-    [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
+  boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/a9dbf275-6ac4-431f-b594-a53a81f8a915";
-    fsType = "f2fs";
+  fileSystems."/" = { device = "/dev/disk/by-uuid/353d6fdd-ee60-4f55-a4bf-1462d1241e29";
+      fsType = "btrfs";
   };
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/EB3E-4DC2";
-    fsType = "vfat";
+  fileSystems."/boot" = { device = "/dev/disk/by-uuid/5DEE-3AD1";
+      fsType = "vfat";
+      options = [ "fmask=0022" "dmask=0022" ];
   };
 
-  swapDevices =
-    [{ device = "/dev/disk/by-uuid/1c7a3dc1-4f4a-426e-ad64-d6267c8fce9a"; }];
+  swapDevices = [ ];
 
   networking.useDHCP = lib.mkDefault true;
-
-  hardware.nvidia = {
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.production;
-  };
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode =

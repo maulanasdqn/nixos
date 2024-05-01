@@ -3,7 +3,7 @@
     enable = true;
     settings = rec {
       initial_session = {
-        command = "startx";
+        command = "Hyprland";
         user = "ms";
       };
       default_session = initial_session;

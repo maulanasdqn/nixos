@@ -1,16 +1,14 @@
 {
   services.xserver = {
     enable = true;
-    videoDrivers = [ "nvidia" ];
-    windowManager = { dwm.enable = true; };
+    videoDrivers = [ "amdgpu" ];
+    windowManager = { dwm.enable = false; };
     displayManager = {
-      startx.enable = true;
-      autoLogin.enable = true;
+      startx.enable = false;
+      autoLogin.enable = false;
       autoLogin.user = "ms";
     };
-    desktopManager = {
-      #gnome.enable = true;
-    };
+    desktopManager = { gnome.enable = false; };
     xkb = {
       layout = "us";
       options = "caps:swapescape";
