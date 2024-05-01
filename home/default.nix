@@ -11,10 +11,9 @@
     ./nvim
     ./starship
     ./packages
-    ./st
-    ./picom
     ./hyprland
     ./dunst
+    ./waybar
     ./foot
     ./wofi
   ];
