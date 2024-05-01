@@ -4,8 +4,8 @@
     enable = true;
     settings = {
       main = {
-        font = "Hack Nerd Font:size=7:line-height=16px";
-        pad = "12x12";
+        font = "Hack Nerd Font:size=11:line-height=16px";
+        pad = "6x6";
       };
       colors = {
         foreground = "d9e0ee";

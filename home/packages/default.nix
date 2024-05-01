@@ -40,6 +40,5 @@
     distrobox
     stdenv.cc.cc.lib
     slstatus
-    gscreenshot
   ];
 }

@@ -62,5 +62,6 @@
     ./init
     ./services
     ./ld
+    ./hyprland
   ];
 }

@@ -16,5 +16,6 @@
     ./hyprland
     ./dunst
     ./foot
+    ./wofi
   ];
 }
