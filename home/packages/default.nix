@@ -29,7 +29,6 @@
     dmenu
     figma-linux
     pavucontrol
-    nitrogen
     obs-studio
     pcmanfm
     mpv

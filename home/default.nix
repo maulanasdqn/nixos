@@ -8,7 +8,6 @@
     ./git
     ./tmux
     ./direnv
-    ./nvim
     ./starship
     ./packages
     ./hyprland
