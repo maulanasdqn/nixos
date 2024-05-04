@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   home.packages = with pkgs; [
     nodejs
     bun
@@ -33,11 +31,12 @@
     pcmanfm
     mpv
     davinci-resolve
-    guvcview
     pcsx2
     gcc
     distrobox
     stdenv.cc.cc.lib
-    slstatus
+    openssl
+    dbeaver
+    prettierd
   ];
 }

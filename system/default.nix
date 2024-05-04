@@ -1,21 +1,31 @@
-{ pkgs, ... }: {
-
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   virtualisation = {
-    libvirtd = { enable = true; };
-    docker = { enable = true; };
+    libvirtd = {enable = true;};
+    docker = {enable = true;};
   };
 
   nixpkgs = {
     config = {
       allowUnfree = true;
-      permittedInsecurePackages = [ "nix-2.15.3" ];
+      permittedInsecurePackages = ["nix-2.15.3"];
     };
   };
 
   environment = {
-    variables = { EDITOR = "vim"; };
-    systemPackages = with pkgs; [ vim curl git wget xorg.xbacklight ];
-    sessionVariables = { LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib"; };
+    variables = {EDITOR = "vim";};
+    systemPackages = [
+      pkgs.vim
+      pkgs.curl
+      pkgs.git
+      pkgs.wget
+      inputs.alejandra.defaultPackage.${pkgs.system}
+      inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
+    ];
+    sessionVariables = {LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";};
   };
 
   programs.gnupg.agent = {
@@ -26,12 +36,12 @@
   fileSystems."/home/ms/HDD" = {
     device = "/dev/sda1";
     fsType = "ntfs-3g";
-    options = [ "rw" "uid=1000" ];
+    options = ["rw" "uid=1000"];
   };
 
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
-    trusted-users = [ "ms" "root" ];
+    experimental-features = ["nix-command" "flakes"];
+    trusted-users = ["ms" "root"];
     substituters = [
       "https://cache.nixos.org"
       "https://cache.komunix.org/"
@@ -62,5 +72,6 @@
     ./services
     ./ld
     ./hyprland
+    ./nixvim
   ];
 }

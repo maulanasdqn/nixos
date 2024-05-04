@@ -1,124 +1,109 @@
 {
+  config,
+  pkgs,
+  ...
+}: {
   programs.waybar = {
     enable = true;
+    systemd.enable = true;
     style = ''
-      * {
-        border: none;
-        font-family: 'Hack Nerd Font', 'Hack Nerd Font Mono';
-        font-size: 16px;
-        font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
-        min-height: 45px;
-      }
+      ${builtins.readFile "${pkgs.waybar}/etc/xdg/waybar/style.css"}
 
       window#waybar {
         background: transparent;
+        border-bottom: none;
       }
 
-      #custom-arch, #workspaces {
-        border-radius: 10px;
-        background-color: #11111b;
-        color: #b4befe;
-        margin-top: 15px;
-        margin-right: 15px;
-        padding-top: 1px;
-        padding-left: 10px;
-        padding-right: 10px;
-      }
+      * {
+        ${
+        if config.hostId == "yoga"
+        then ''
+          font-size: 18px;
+        ''
+        else ''
 
-      #custom-arch {
-        font-size: 20px;
-        margin-left: 15px;
-        color: #b4befe;
+        ''
       }
-
-      #workspaces button {
-        background: #11111b;
-        color: #b4befe;
-      }
-
-      #clock, #backlight, #pulseaudio, #bluetooth, #network, #battery{
-        border-radius: 10px;
-        background-color: #11111b;
-        color: #cdd6f4;
-        margin-top: 15px;
-        padding-left: 10px;
-        padding-right: 10px;
-        margin-right: 15px;
-      }
-
-      #backlight, #bluetooth {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-        padding-right: 5px;
-        margin-right: 0
-      }
-
-      #pulseaudio, #network {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        padding-left: 5px;
-      }
-
-      #clock {
-        margin-right: 0;
       }
     '';
-    settings = {
-      mainBar = {
+    settings = [
+      {
+        height = 30;
         layer = "top";
-        modules-left = [ "hyprland/workspaces" ];
-        modules-center = [ "clock" ];
+        position = "bottom";
+        tray = {spacing = 10;};
+        modules-center = ["sway/window"];
+        modules-left = ["sway/workspaces" "sway/mode"];
         modules-right =
-          [ "backlight" "pulseaudio" "bluetooth" "network" "battery" ];
-
-        "hyprland/workspaces" = {
-          format = "{name}";
-          format-icons = {
-            active = "";
-            default = "";
+          [
+            "pulseaudio"
+            "network"
+            "cpu"
+            "memory"
+            "temperature"
+          ]
+          ++ (
+            if config.hostId == "yoga"
+            then ["battery"]
+            else []
+          )
+          ++ [
+            "clock"
+            "tray"
+          ];
+        battery = {
+          format = "{capacity}% {icon}";
+          format-alt = "{time} {icon}";
+          format-charging = "{capacity}% ";
+          format-icons = ["" "" "" "" ""];
+          format-plugged = "{capacity}% ";
+          states = {
+            critical = 15;
+            warning = 30;
           };
+        };
+        clock = {
+          format-alt = "{:%Y-%m-%d}";
+          tooltip-format = "{:%Y-%m-%d | %H:%M}";
+        };
+        cpu = {
+          format = "{usage}% ";
           tooltip = false;
-          all-outputs = true;
         };
-
-        backlight = {
-          device = "intel_backlight";
-          format = "<span color='#b4befe'>{icon}</span> {percent}%";
-          format-icons = [ "" "" "" "" "" "" "" "" "" ];
-        };
-
-        pulseaudio = {
-          format = "<span color='#b4befe'>{icon}</span> {volume}%";
-          format-muted = "";
-          tooltip = false;
-          format-icons = {
-            headphone = "";
-            default = [ "" "" "󰕾" "󰕾" "󰕾" "" "" "" ];
-          };
-          scroll-step = 1;
-        };
-
-        bluetooth = {
-          format = "<span color='#b4befe'></span> {status}";
-          format-disabled = "";
-          format-connected = "<span color='#b4befe'></span> {num_connections}";
-          tooltip-format = "{device_enumerate}";
-          tooltip-format-enumerate-connected =
-            "{device_alias}   {device_address}";
-        };
-
+        memory = {format = "{}% ";};
         network = {
-          interface = "wlo1";
-          format = "{ifname}";
-          format-wifi = "<span color='#b4befe'> </span>{essid}";
-          format-ethernet = "{ipaddr}/{cidr} ";
-          format-disconnected = "<span color='#b4befe'>󰖪 </span>No Network";
-          tooltip = false;
+          interval = 1;
+          format-alt = "{ifname}: {ipaddr}/{cidr}";
+          format-disconnected = "Disconnected ⚠";
+          format-ethernet = "{ifname}: {ipaddr}/{cidr}   up: {bandwidthUpBits} down: {bandwidthDownBits}";
+          format-linked = "{ifname} (No IP) ";
+          format-wifi = "{essid} ({signalStrength}%) ";
         };
-
-        clock = { format = "<span color='#b4befe'> </span>{:%H:%M}"; };
-
-      };
-    };
+        pulseaudio = {
+          format = "{volume}% {icon} {format_source}";
+          format-bluetooth = "{volume}% {icon} {format_source}";
+          format-bluetooth-muted = " {icon} {format_source}";
+          format-icons = {
+            car = "";
+            default = ["" "" ""];
+            handsfree = "";
+            headphones = "";
+            headset = "";
+            phone = "";
+            portable = "";
+          };
+          format-muted = " {format_source}";
+          format-source = "{volume}% ";
+          format-source-muted = "";
+          on-click = "pavucontrol";
+        };
+        "sway/mode" = {format = ''<span style="italic">{}</span>'';};
+        temperature = {
+          critical-threshold = 80;
+          format = "{temperatureC}°C {icon}";
+          format-icons = ["" "" ""];
+        };
+      }
+    ];
   };
 }
