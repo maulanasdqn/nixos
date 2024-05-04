@@ -107,7 +107,6 @@
       codeium-vim.enable = true;
       wtf.enable = true;
       lualine.enable = true;
-      indent-blankline.enable = true;
       lsp-format.enable = true;
       noice.enable = true;
       noice.notify.enabled = true;
