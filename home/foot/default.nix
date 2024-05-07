@@ -6,9 +6,9 @@
         font = "Hack Nerd Font:size=11:line-height=16px";
       };
       colors = {
-        foreground = "d9e0ee";
-        background = "292a37";
-        regular0 = "303241"; # black
+        background = "1f1d2e";
+        foreground = "e0def4";
+        regular0 = "191724"; # black
         regular1 = "ec6a88";
         regular2 = "3fdaa4";
         regular3 = "efb993";

@@ -59,6 +59,7 @@
   system.stateVersion = "23.11";
 
   imports = [
+    ./fonts
     ./hardware
     ./boot
     ./network

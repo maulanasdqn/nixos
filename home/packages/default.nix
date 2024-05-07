@@ -30,7 +30,6 @@
     obs-studio
     pcmanfm
     mpv
-    davinci-resolve
     pcsx2
     gcc
     distrobox

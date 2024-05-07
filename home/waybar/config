@@ -9,7 +9,6 @@
       "on-click": "sh $HOME/.config/rofi/bin/powermenu"
     },
     "hyprland/workspaces": {
-      "format": "{name}",
       "format": "{icon}",
       "tooltip": false,
       "all-outputs": true,
@@ -44,7 +43,7 @@
       "tooltip-format-enumerate-connected": "{device_alias}   {device_address}"
     },
     "network": {
-      "interface": "wlo1",
+      "interface": "enp4s0",
       "format": "{ifname}",
       "format-wifi": "<span color='#b4befe'> </span>{essid}",
       "format-ethernet": "{ipaddr}/{cidr} ",
