@@ -105,7 +105,17 @@
       trouble.enable = true;
       codeium-vim.enable = true;
       wtf.enable = true;
-      lualine.enable = true;
+      lualine = {
+        enable = true;
+        componentSeparators = {
+          right = "|";
+          left = "|";
+        };
+        sectionSeparators = {
+          right = "|";
+          left = "|";
+        };
+      };
       lsp-format.enable = true;
       noice.enable = true;
       noice.notify.enabled = true;
