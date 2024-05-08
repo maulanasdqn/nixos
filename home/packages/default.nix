@@ -20,7 +20,6 @@
     discord
     google-chrome
     spotify
-    mysql-workbench
     gparted
     neofetch
     zoom-us
@@ -37,5 +36,6 @@
     openssl
     dbeaver
     prettierd
+    blueman
   ];
 }

@@ -103,7 +103,6 @@
       telescope.enable = true;
       nvim-tree.enable = true;
       trouble.enable = true;
-      codeium-nvim.enable = true;
       codeium-vim.enable = true;
       wtf.enable = true;
       lualine.enable = true;
@@ -167,18 +166,13 @@
           };
           settings = {
             completeopt = "menu,menuone,noselect";
-            autocomplete = true;
           };
           sources = [
             {name = "nvim_lsp";}
-            {name = "nvim_lsp_signature_help";}
-            {name = "nvim_lsp_document_symbol";}
-            {name = "codeium";}
             {name = "luasnip";}
             {name = "path";}
             {name = "buffer";}
             {name = "cmdline";}
-            {name = "treesitter";}
           ];
           extraOptions = {
             snippet = {
@@ -189,8 +183,8 @@
               '';
             };
             window = {
-              completion.bordered = "cmp.config.window.bordered()";
-              documentation.bordered = "cmp.config.window.bordered()";
+              completion.bordered = true;
+              documentation.bordered = true;
             };
           };
         };
