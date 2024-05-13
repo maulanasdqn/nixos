@@ -1,35 +1,32 @@
 * {
   border: none;
   font-family: "Hack Nerd Font Mono", "Hack Nerd Font";
-  font-size: 16px;
+  font-size: 14px;
   min-height: 25px;
 }
 
 window#waybar {
-  background: transparent;
+  border-radius: 6px;
+  background: #1f1d2e;
 }
 
 #custom-arch,
 #workspaces {
-  border-radius: 10px;
-  background-color: #11111b;
-  color: #b4befe;
-  margin-top: 10px;
+  background-color: #1f1d2e;
+  color: #ebbcba;
   margin-right: 15px;
-  padding-top: 1px;
   padding-left: 10px;
   padding-right: 10px;
 }
 
 #custom-arch {
-  font-size: 20px;
   margin-left: 15px;
-  color: #b4befe;
+  color: #ebbcba;
 }
 
 #workspaces button {
-  background: #11111b;
-  color: #b4befe;
+  background: #1f1d2e;
+  color: #ebbcba;
 }
 
 #clock,
@@ -38,10 +35,8 @@ window#waybar {
 #bluetooth,
 #network,
 #battery {
-  border-radius: 10px;
-  background-color: #11111b;
-  color: #cdd6f4;
-  margin-top: 10px;
+  background-color: #1f1d2e;
+  color: #ebbcba;
   padding-left: 10px;
   padding-right: 10px;
   margin-right: 15px;
@@ -49,15 +44,11 @@ window#waybar {
 
 #backlight,
 #bluetooth {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
   padding-right: 5px;
   margin-right: 0;
 }
 
 #network {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
   padding-left: 5px;
 }
 

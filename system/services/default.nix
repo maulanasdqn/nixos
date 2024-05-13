@@ -8,6 +8,5 @@
     ./printing
     ./redis
     ./postgresql
-    ./picom
   ];
 }

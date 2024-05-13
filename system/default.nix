@@ -25,18 +25,35 @@
       inputs.alejandra.defaultPackage.${pkgs.system}
       inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
     ];
-    sessionVariables = {LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";};
+    sessionVariables = {
+      LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
+      NIXOS_OZONE_WL = "1";
+    };
   };
+
+  services.gnome.gnome-keyring.enable = true;
 
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
   };
 
-  fileSystems."/home/ms/HDD" = {
-    device = "/dev/sda1";
-    fsType = "ntfs-3g";
-    options = ["rw" "uid=1000"];
+  fileSystems = {
+    "/home/ms/HDD" = {
+      device = "/dev/sda1";
+      fsType = "ntfs-3g";
+      options = ["rw" "uid=1000"];
+    };
+    "/home/ms/HDD2" = {
+      device = "/dev/sdb1";
+      fsType = "ntfs-3g";
+      options = ["rw" "uid=1000"];
+    };
+    "/home/ms/NVME" = {
+      device = "/dev/nvme0n1p3";
+      fsType = "ntfs-3g";
+      options = ["rw" "uid=1000"];
+    };
   };
 
   nix.settings = {

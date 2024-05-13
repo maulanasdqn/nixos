@@ -1,11 +1,10 @@
-{ config, ... }: {
-
+{config, ...}: {
   programs.zsh.enable = true;
   programs.zsh.enableCompletion = true;
   programs.zsh.autosuggestion.enable = true;
   programs.zsh.syntaxHighlighting.enable = true;
   programs.zsh.oh-my-zsh.enable = true;
-  programs.zsh.oh-my-zsh.plugins = [ "git" "ant" ];
+  programs.zsh.oh-my-zsh.plugins = ["git" "ant"];
   programs.zsh.oh-my-zsh.theme = "intheloop";
 
   programs.zsh.initExtra = ''
@@ -25,13 +24,14 @@
   '';
 
   programs.zsh.shellAliases.u = "nix flake update ~/.config/nixos";
-  programs.zsh.shellAliases.b =
-    "sudo nixos-rebuild switch --flake ~/.config/nixos#beast --impure";
+  programs.zsh.shellAliases.b = "sudo nixos-rebuild switch --flake ~/.config/nixos#beast --impure";
   programs.zsh.shellAliases.clean = "sudo nix-collect-garbage -d";
   programs.zsh.shellAliases.ls = "eza";
   programs.zsh.shellAliases.pn = "pnpm";
   programs.zsh.shellAliases.px = "pnpx";
   programs.zsh.shellAliases.yr = "yarn";
+  programs.zsh.shellAliases.bn = "bun";
+  programs.zsh.shellAliases.bx = "bunx";
   programs.zsh.shellAliases.np = "npm";
   programs.zsh.shellAliases.lsa = "eza -a";
   programs.zsh.shellAliases.ll = "eza -l";
@@ -43,5 +43,4 @@
     size = 10000;
     path = "${config.xdg.dataHome}/zsh/history";
   };
-
 }

@@ -206,6 +206,7 @@
           lua-ls.enable = true;
           nil_ls.enable = true;
           emmet_ls.enable = true;
+          tailwindcss.enable = true;
         };
       };
     };
