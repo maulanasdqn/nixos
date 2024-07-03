@@ -2,6 +2,7 @@
   config,
   lib,
   modulesPath,
+  pkgs,
   ...
 }: {
   imports = [(modulesPath + "/installer/scan/not-detected.nix")];
@@ -30,6 +31,9 @@
 
   hardware.graphics = {
     enable = true;
+    extraPackages = with pkgs; [
+      amdvlk
+    ];
   };
 
   hardware.bluetooth.enable = true;
