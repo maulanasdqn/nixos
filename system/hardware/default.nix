@@ -28,10 +28,8 @@
 
   networking.useDHCP = lib.mkDefault true;
 
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
   };
 
   hardware.bluetooth.enable = true;

@@ -180,9 +180,6 @@
           sources = [
             {name = "nvim_lsp";}
             {name = "luasnip";}
-            {name = "path";}
-            {name = "buffer";}
-            {name = "cmdline";}
           ];
           extraOptions = {
             snippet = {
@@ -204,9 +201,11 @@
         servers = {
           tsserver.enable = true;
           lua-ls.enable = true;
-          nil_ls.enable = true;
-          emmet_ls.enable = true;
+          nil-ls.enable = true;
+          emmet-ls.enable = true;
           tailwindcss.enable = true;
+          eslint.enable = true;
+          volar.enable = true;
         };
       };
     };
