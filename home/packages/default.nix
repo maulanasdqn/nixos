@@ -37,5 +37,6 @@
     dbeaver-bin
     prettierd
     blueman
+    zip
   ];
 }

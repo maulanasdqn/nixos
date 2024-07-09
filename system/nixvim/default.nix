@@ -159,10 +159,12 @@
         lightbulb.enable = false;
       };
       treesitter = {
+        settings = {
+          indent.enable = true;
+          ensure_installed = ["nix" "tsx" "jsx" "lua" "markdown" "markdown_inline"];
+        };
         enable = true;
         nixGrammars = true;
-        indent = true;
-        ensureInstalled = ["nix" "tsx" "jsx" "lua" "markdown" "markdown_inline"];
         nixvimInjections = true;
       };
       cmp = {
