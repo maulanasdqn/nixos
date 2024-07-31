@@ -34,7 +34,6 @@
     distrobox
     stdenv.cc.cc.lib
     openssl
-    dbeaver-bin
     prettierd
     blueman
     zip
