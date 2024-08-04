@@ -104,6 +104,9 @@
         "float,title:^(Picture-in-Picture)$"
         "size 800 600,title:^(Volume Control)$"
         "move 75 44%,title:^(Volume Control)$"
+      ];
+
+      windowrulev2 = [
         "opacity 0.9 0.9,class:^(foot)$"
         "stayfocused,class:(wofi)"
         "noborder,class:(wofi)"
