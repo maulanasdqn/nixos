@@ -15,5 +15,6 @@
     ./waybar
     ./foot
     ./wofi
+    ./vscode
   ];
 }

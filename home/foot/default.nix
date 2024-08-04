@@ -8,7 +8,7 @@
       colors = {
         background = "1f1d2e";
         foreground = "e0def4";
-        regular0 = "191724"; # black
+        regular0 = "191724";
         regular1 = "ec6a88";
         regular2 = "3fdaa4";
         regular3 = "efb993";
@@ -16,15 +16,14 @@
         regular5 = "b771dc";
         regular6 = "6be6e6";
         regular7 = "d9e0ee";
-
-        bright0 = "393a4d"; # bright black
-        bright1 = "e95678"; # bright red
-        bright2 = "29d398"; # bright green
-        bright3 = "efb993"; # bright yellow
+        bright0 = "393a4d";
+        bright1 = "e95678";
+        bright2 = "29d398";
+        bright3 = "efb993";
         bright4 = "26bbd9";
-        bright5 = "b072d1"; # bright magenta
-        bright6 = "59e3e3"; # bright cyan
-        bright7 = "d9e0ee"; # bright white
+        bright5 = "b072d1";
+        bright6 = "59e3e3";
+        bright7 = "d9e0ee";
       };
     };
   };

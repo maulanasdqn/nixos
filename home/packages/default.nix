@@ -11,7 +11,6 @@
     android-tools
     ripgrep
     luajitPackages.lua-lsp
-    vscode
     slack
     xclip
     unzip
@@ -37,8 +36,6 @@
     prettierd
     blueman
     zip
-    waybar
-    sway
     swaybg
     wlsunset
     wl-clipboard
