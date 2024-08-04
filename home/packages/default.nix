@@ -37,5 +37,10 @@
     prettierd
     blueman
     zip
+    waybar
+    sway
+    swaybg
+    wlsunset
+    wl-clipboard
   ];
 }

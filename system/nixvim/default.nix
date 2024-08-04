@@ -2,7 +2,7 @@
   programs.nixvim = {
     enable = true;
     globals.mapleader = " ";
-    colorschemes.rose-pine.enable = true;
+    colorschemes.catppuccin.enable = true;
     opts = {
       number = true;
       shiftwidth = 2;
