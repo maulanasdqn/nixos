@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   programs.wofi = {
-    enable = true;
+    enable = false;
     package = pkgs.wofi;
     settings = {
       height = "40%";

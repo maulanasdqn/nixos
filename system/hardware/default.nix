@@ -12,20 +12,19 @@
   boot.kernelModules = ["kvm-amd"];
   boot.extraModulePackages = [];
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/129b7ada-50fc-4fbf-b65b-831cc7ed071e";
-    fsType = "btrfs";
-  };
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/28040736-5467-492f-bd8f-f8bdce4b06c6";
+      fsType = "btrfs";
+      options = [ "subvol=@" ];
+    };
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/12CE-A600";
-    fsType = "vfat";
-    options = ["fmask=0022" "dmask=0022"];
-  };
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/9965-FB67";
+      fsType = "vfat";
+      options = [ "fmask=0077" "dmask=0077" ];
+    };
 
-  swapDevices = [
-    {device = "/dev/disk/by-uuid/d445c95d-c7ba-4890-a6f5-16979fd639d3";}
-  ];
+  swapDevices = [ ];
 
   networking.useDHCP = lib.mkDefault true;
 

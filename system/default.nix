@@ -22,6 +22,7 @@
       pkgs.curl
       pkgs.git
       pkgs.wget
+      pkgs.devenv
       inputs.alejandra.defaultPackage.${pkgs.system}
       inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
     ];
@@ -39,23 +40,23 @@
     enableSSHSupport = true;
   };
 
-  fileSystems = {
-    "/home/ms/HDD" = {
-      device = "/dev/sda1";
-      fsType = "ntfs-3g";
-      options = ["rw" "uid=1000"];
-    };
-    "/home/ms/HDD2" = {
-      device = "/dev/sdb1";
-      fsType = "ntfs-3g";
-      options = ["rw" "uid=1000"];
-    };
-    "/home/ms/NVME" = {
-      device = "/dev/nvme0n1p3";
-      fsType = "ntfs-3g";
-      options = ["rw" "uid=1000"];
-    };
-  };
+  #fileSystems = {
+  #  "/home/ms/HDD" = {
+  #    device = "/dev/sda1";
+  #    fsType = "ntfs-3g";
+  #    options = ["rw" "uid=1000"];
+  #  };
+  #  "/home/ms/HDD2" = {
+  #    device = "/dev/sdb1";
+  #    fsType = "ntfs-3g";
+  #    options = ["rw" "uid=1000"];
+  #  };
+  #  "/home/ms/NVME" = {
+  #    device = "/dev/nvme0n1p3";
+  #    fsType = "ntfs-3g";
+  #    options = ["rw" "uid=1000"];
+  #  };
+  #};
 
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];

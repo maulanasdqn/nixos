@@ -15,9 +15,8 @@
     xclip
     unzip
     unrar
-    brave
     discord
-    google-chrome
+    microsoft-edge
     spotify
     gparted
     neofetch

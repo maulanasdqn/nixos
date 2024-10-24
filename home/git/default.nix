@@ -1,20 +1,20 @@
 {pkgs, ...}: let
-  kuncie = {
+  astra = {
     user = {
-      name = "Frontend Kuncie";
-      email = "frontendkuncie@gmail.com";
+      name = "Maulana Sodiqin";
+      email = "maulana@dot-indonesia.com";
     };
     core = {
-      sshCommand = "ssh -i ~/.ssh/id_ed25519_kuncie";
+      sshCommand = "ssh -i ~/.ssh/id_astra";
     };
   };
   personal = {
     user = {
       name = "Maulana Sodiqin";
-      email = "maulanasdqn@gmail.com";
+      email = "sodiqincahyana1@gmail.com";
     };
     core = {
-      sshCommand = "ssh -i ~/.ssh/id_ed25519_personal";
+      sshCommand = "ssh -i ~/.ssh/id_personal";
     };
   };
   dot = {
@@ -23,7 +23,7 @@
       email = "msdqn@outlook.com";
     };
     core = {
-      sshCommand = "ssh -i ~/.ssh/id_ed25519_dot";
+      sshCommand = "ssh -i ~/.ssh/id_dot";
     };
   };
 in {
@@ -34,7 +34,10 @@ in {
       user.useConfigOnly = true;
       init = {defaultBranch = "main";};
       push = {autoSetupRemote = true;};
-      core = {excludesfile = "$NIXOS_CONFIG_DIR/scripts/gitignore";};
+      core = {
+        excludesfile = "$NIXOS_CONFIG_DIR/scripts/gitignore";
+        sshCommand = "ssh -i ~/.ssh/id_personal";
+      };
       url = {
         "git@gitlab.dot.co.id:" = {
           insteadOf = "https://gitlab.dot.co.id/";
@@ -46,29 +49,24 @@ in {
     };
     includes = [
       {
-        condition = "gitdir:~/Development/dot";
+        condition = "hasconfig:remote.*.url:git@gitlab.dot.co.id:*/*";
         contents.user = dot.user;
         contents.core = dot.core;
       }
       {
-        condition = "gitdir:~/Development/personal";
+        condition = "hasconfig:remote.*.url:git@github.com:maulanasdqn/*";
         contents.user = personal.user;
         contents.core = personal.core;
       }
       {
-        condition = "gitdir:~/Development/berry";
+        condition = "gitdir:~/.config/nix/config";
         contents.user = personal.user;
         contents.core = personal.core;
       }
       {
-        condition = "gitdir:~/.config/nixos";
-        contents.user = personal.user;
-        contents.core = personal.core;
-      }
-      {
-        condition = "gitdir:~/Development/kuncie";
-        contents.user = kuncie.user;
-        contents.core = kuncie.core;
+        condition = "hasconfig:remote.*.url:git@github.com:project-torq/*";
+        contents.user = astra.user;
+        contents.core = astra.core;
       }
     ];
   };

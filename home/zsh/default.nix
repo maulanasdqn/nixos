@@ -20,11 +20,11 @@
     export NIX_PATH=$HOME/.nix-defexpr/channels:$NIX_PATH
     export NODE_OPTIONS=--max_old_space_size=4096
     export DIRENV_LOG_FORMAT=
-    source ~/.config/nixos/home/zsh/z.sh
+    source ~/.config/nix/config/home/zsh/z.sh
   '';
 
   programs.zsh.shellAliases.u = "nix flake update ~/.config/nixos";
-  programs.zsh.shellAliases.b = "sudo nixos-rebuild switch --flake ~/.config/nixos#beast --impure";
+  programs.zsh.shellAliases.b = "sudo nixos-rebuild switch --flake ~/.config/nix/config#beast --impure";
   programs.zsh.shellAliases.clean = "sudo nix-collect-garbage -d";
   programs.zsh.shellAliases.ls = "eza";
   programs.zsh.shellAliases.pn = "pnpm";

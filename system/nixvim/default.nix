@@ -2,7 +2,57 @@
   programs.nixvim = {
     enable = true;
     globals.mapleader = " ";
-    colorschemes.catppuccin.enable = true;
+    colorschemes.rose-pine = {
+      enable = true;
+      settings = {
+        before_highlight = "function(group, highlight, palette) end";
+        dark_variant = "main";
+        dim_inactive_windows = true;
+        enable = {
+          legacy_highlights = false;
+          migrations = true;
+          terminal = false;
+        };
+        extend_background_behind_borders = true;
+        groups = {
+          border = "muted";
+          link = "iris";
+          panel = "surface";
+
+          error = "love";
+          hint = "iris";
+          info = "foam";
+          note = "pine";
+          todo = "rose";
+          warn = "gold";
+
+          git_add = "foam";
+          git_change = "rose";
+          git_delete = "love";
+          git_dirty = "rose";
+          git_ignore = "muted";
+          git_merge = "iris";
+          git_rename = "pine";
+          git_stage = "iris";
+          git_text = "rose";
+          git_untracked = "subtle";
+
+          h1 = "iris";
+          h2 = "foam";
+          h3 = "rose";
+          h4 = "gold";
+          h5 = "pine";
+          h6 = "foam";
+        };
+        highlight_groups = {};
+        styles = {
+          bold = false;
+          italic = true;
+          transparency = true;
+        };
+        variant = "auto";
+      };
+    };
     opts = {
       number = true;
       shiftwidth = 2;
@@ -101,12 +151,14 @@
       nix.enable = true;
       luasnip.enable = true;
       telescope.enable = true;
-      nvim-tree.enable = true;
+      nvim-tree = {
+        enable = true;
+      };
       trouble.enable = true;
-      codeium-vim.enable = true;
+      copilot-vim.enable = true;
       wtf.enable = true;
       lualine = {
-        enable = true;
+        enable = false;
         componentSeparators = {
           right = "|";
           left = "|";
@@ -117,8 +169,8 @@
         };
       };
       lsp-format.enable = true;
-      noice.enable = true;
-      noice.notify.enabled = true;
+      noice.enable = false;
+      noice.notify.enabled = false;
       lspkind.enable = true;
       lspkind.cmp.enable = true;
       cmp-nvim-lsp.enable = true;
@@ -135,9 +187,11 @@
       cmp-tmux.enable = false;
       conform-nvim = {
         enable = true;
-        formatOnSave = {
-          lspFallback = true;
-          timeoutMs = 500;
+        settings = {
+          format_on_save = {
+            lspFallback = true;
+            timeoutMs = 500;
+          };
         };
         formattersByFt = {
           liquidsoap = ["liquidsoap-prettier"];
@@ -205,7 +259,7 @@
           tsserver.enable = true;
           lua-ls.enable = true;
           nil-ls.enable = true;
-          emmet-ls.enable = true;
+          emmet_ls.enable = true;
           tailwindcss.enable = true;
           eslint.enable = true;
           volar.enable = true;
