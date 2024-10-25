@@ -30,7 +30,6 @@
     pcsx2
     gcc
     distrobox
-    stdenv.cc.cc.lib
     openssl
     prettierd
     blueman
@@ -38,5 +37,6 @@
     swaybg
     wlsunset
     wl-clipboard
+    fzf
   ];
 }

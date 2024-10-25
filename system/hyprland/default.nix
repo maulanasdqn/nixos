@@ -4,7 +4,7 @@
   ...
 }: {
   programs.hyprland = {
-    enable = false;
+    enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
 }

@@ -1,6 +1,6 @@
 {
   programs.foot = {
-    enable = false;
+    enable = true;
     settings = {
       main = {
         font = "Hack Nerd Font:size=11:line-height=16px";

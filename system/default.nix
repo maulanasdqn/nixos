@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  lib,
   ...
 }: {
   virtualisation = {
@@ -23,11 +24,15 @@
       pkgs.git
       pkgs.wget
       pkgs.devenv
+      pkgs.gcc
+      pkgs.libgcc
+      pkgs.gnumake
+      pkgs.cmake
+      pkgs.extra-cmake-modules
       inputs.alejandra.defaultPackage.${pkgs.system}
       inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
     ];
     sessionVariables = {
-      LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
       NIXOS_OZONE_WL = "1";
       WLR_NO_HARDWARE_CURSORS = "1";
     };

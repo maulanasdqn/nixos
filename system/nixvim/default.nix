@@ -2,57 +2,7 @@
   programs.nixvim = {
     enable = true;
     globals.mapleader = " ";
-    colorschemes.rose-pine = {
-      enable = true;
-      settings = {
-        before_highlight = "function(group, highlight, palette) end";
-        dark_variant = "main";
-        dim_inactive_windows = true;
-        enable = {
-          legacy_highlights = false;
-          migrations = true;
-          terminal = false;
-        };
-        extend_background_behind_borders = true;
-        groups = {
-          border = "muted";
-          link = "iris";
-          panel = "surface";
-
-          error = "love";
-          hint = "iris";
-          info = "foam";
-          note = "pine";
-          todo = "rose";
-          warn = "gold";
-
-          git_add = "foam";
-          git_change = "rose";
-          git_delete = "love";
-          git_dirty = "rose";
-          git_ignore = "muted";
-          git_merge = "iris";
-          git_rename = "pine";
-          git_stage = "iris";
-          git_text = "rose";
-          git_untracked = "subtle";
-
-          h1 = "iris";
-          h2 = "foam";
-          h3 = "rose";
-          h4 = "gold";
-          h5 = "pine";
-          h6 = "foam";
-        };
-        highlight_groups = {};
-        styles = {
-          bold = false;
-          italic = true;
-          transparency = true;
-        };
-        variant = "auto";
-      };
-    };
+    colorschemes.catppuccin.enable = true;
     opts = {
       number = true;
       shiftwidth = 2;
@@ -147,27 +97,15 @@
     ];
 
     plugins = {
+      web-devicons.enable = true;
       nvim-autopairs.enable = true;
       nix.enable = true;
       luasnip.enable = true;
       telescope.enable = true;
-      nvim-tree = {
-        enable = true;
-      };
+      nvim-tree.enable = true;
       trouble.enable = true;
       copilot-vim.enable = true;
       wtf.enable = true;
-      lualine = {
-        enable = false;
-        componentSeparators = {
-          right = "|";
-          left = "|";
-        };
-        sectionSeparators = {
-          right = "|";
-          left = "|";
-        };
-      };
       lsp-format.enable = true;
       noice.enable = false;
       noice.notify.enabled = false;
@@ -192,20 +130,20 @@
             lspFallback = true;
             timeoutMs = 500;
           };
-        };
-        formattersByFt = {
-          liquidsoap = ["liquidsoap-prettier"];
-          html = [["prettierd" "prettier"]];
-          css = [["prettierd" "prettier"]];
-          javascript = ["prettier"];
-          javascriptreact = ["prettier"];
-          typescript = ["prettier"];
-          typescriptreact = ["prettier"];
-          python = ["black"];
-          lua = ["stylua"];
-          nix = ["alejandra"];
-          markdown = ["prettier"];
-          yaml = ["yamllint" "yamlfmt"];
+          formatters_by_ft = {
+            liquidsoap = ["liquidsoap-prettier"];
+            html = [["prettierd" "prettier"]];
+            css = [["prettierd" "prettier"]];
+            javascript = ["prettier"];
+            javascriptreact = ["prettier"];
+            typescript = ["prettier"];
+            typescriptreact = ["prettier"];
+            python = ["black"];
+            lua = ["stylua"];
+            nix = ["alejandra"];
+            markdown = ["prettier"];
+            yaml = ["yamllint" "yamlfmt"];
+          };
         };
       };
       lspsaga = {
@@ -256,9 +194,9 @@
       lsp = {
         enable = true;
         servers = {
-          tsserver.enable = true;
-          lua-ls.enable = true;
-          nil-ls.enable = true;
+          ts_ls.enable = true;
+          lua_ls.enable = true;
+          nil_ls.enable = true;
           emmet_ls.enable = true;
           tailwindcss.enable = true;
           eslint.enable = true;

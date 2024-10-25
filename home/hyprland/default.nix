@@ -5,7 +5,7 @@
     settings = {
       source = "${pkgs.writeText "rose-pine.conf" (builtins.readFile "/home/ms/.config/nix/config/home/hyprland/rose-pine.conf")}";
 
-      monitor = ",highres,auto,1";
+      monitor = ",highres,auto,1.2";
       "exec" = "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'";
 
       xwayland = {
@@ -32,7 +32,6 @@
       };
 
       general = {
-        sensitivity = 1;
         gaps_in = 6;
         gaps_out = 12;
         border_size = 1;
