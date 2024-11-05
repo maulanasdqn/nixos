@@ -56,7 +56,7 @@
         };
 
         network = {
-          interface = "enp4s0";
+          interface = "wlp1s0";
           format = "{ifname}";
           "format-wifi" = "<span color='#ebbcba'> </span>{essid}";
           "format-ethernet" = "{ipaddr}/{cidr} ";
@@ -71,8 +71,8 @@
 
         battery = {
           format = "<span color='#ebbcba'>{icon}</span> {capacity}%";
-          "format-icons" = ["" "" "" "" "" "" "" "" "" ""];
-          "format-charging" = "<span color='#b4befe'></span> {capacity}%";
+          "format-icons" = ["" "" "" "" "" ""];
+          "format-charging" = "<span color='#b4befe'></span> {capacity}%";
           tooltip = false;
         };
       };

@@ -5,7 +5,7 @@
     settings = {
       source = "${pkgs.writeText "rose-pine.conf" (builtins.readFile "/home/ms/.config/nix/config/home/hyprland/rose-pine.conf")}";
 
-      monitor = ",highres,auto,1.2";
+      monitor = "eDP-1, preferred, 2194x0, 1.6";
       "exec" = "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'";
 
       xwayland = {
@@ -14,7 +14,7 @@
 
       "exec-once" = [
         "dunst"
-        "swaybg -i $HOME/Downloads/lake.jpg"
+        "swaybg -i $HOME/Downloads/wall.png"
         "waybar"
       ];
 

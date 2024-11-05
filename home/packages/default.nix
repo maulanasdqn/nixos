@@ -1,10 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     nodejs
-    bun
-    nodePackages.npm
-    nodePackages.yarn
-    nodePackages.pnpm
     eza
     htop
     fd
@@ -15,9 +11,9 @@
     xclip
     unzip
     unrar
+    lsof
     discord
     microsoft-edge
-    spotify
     gparted
     neofetch
     zoom-us
@@ -38,5 +34,7 @@
     wlsunset
     wl-clipboard
     fzf
+    brightnessctl
+    alsa-utils
   ];
 }

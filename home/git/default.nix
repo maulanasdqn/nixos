@@ -1,4 +1,13 @@
 {pkgs, ...}: let
+  kuncie = {
+    user = {
+      name = "Frontend Kuncie";
+      email = "frontendkuncie@gmail.com";
+    };
+    core = {
+      sshCommand = "ssh -i ~/.ssh/id_kuncie";
+    };
+  };
   astra = {
     user = {
       name = "Maulana Sodiqin";
@@ -67,6 +76,11 @@ in {
         condition = "hasconfig:remote.*.url:git@github.com:project-torq/*";
         contents.user = astra.user;
         contents.core = astra.core;
+      }
+      {
+        condition = "hasconfig:remote.*.url:git@github.com:kunciehub/*";
+        contents.user = kuncie.user;
+        contents.core = kuncie.core;
       }
     ];
   };

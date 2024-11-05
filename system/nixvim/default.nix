@@ -1,8 +1,7 @@
-{pkgs, ...}: {
+{
   programs.nixvim = {
     enable = true;
     globals.mapleader = " ";
-    colorschemes.catppuccin.enable = true;
     opts = {
       number = true;
       shiftwidth = 2;
@@ -20,32 +19,15 @@
       splitbelow = true;
       clipboard = "unnamedplus";
       updatetime = 300;
-      scrolloff = 3;
+      scrolloff = 4;
       wildignorecase = true;
       cmdheight = 0;
+      showtabline = 0;
       showmode = false;
       guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50";
       wrap = false;
     };
     keymaps = [
-      {
-        action = "<cmd>Telescope find_files<CR>";
-        key = "<leader>s";
-        mode = "n";
-        options.silent = true;
-      }
-      {
-        action = "<cmd>Telescope buffers<CR>";
-        key = "<leader>b";
-        mode = "n";
-        options.silent = true;
-      }
-      {
-        action = "<cmd>Telescope live_grep<CR>";
-        key = "<leader>m";
-        mode = "n";
-        options.silent = true;
-      }
       {
         action = "<cmd>Lspsaga term_toggle<CR>";
         key = "<leader>t";
@@ -101,14 +83,10 @@
       nvim-autopairs.enable = true;
       nix.enable = true;
       luasnip.enable = true;
-      telescope.enable = true;
       nvim-tree.enable = true;
       trouble.enable = true;
       copilot-vim.enable = true;
-      wtf.enable = true;
       lsp-format.enable = true;
-      noice.enable = false;
-      noice.notify.enabled = false;
       lspkind.enable = true;
       lspkind.cmp.enable = true;
       cmp-nvim-lsp.enable = true;
@@ -121,8 +99,6 @@
       cmp-spell.enable = true;
       cmp-dictionary.enable = true;
       cmp-treesitter.enable = true;
-      cmp-fish.enable = false;
-      cmp-tmux.enable = false;
       conform-nvim = {
         enable = true;
         settings = {
@@ -152,9 +128,6 @@
       };
       treesitter = {
         enable = true;
-        nixGrammars = true;
-        nixvimInjections = true;
-        treesitterPackage = pkgs.tree-sitter;
         settings = {
           indent.enable = true;
           ensure_installed = ["nix" "tsx" "typescript" "javascript" "json" "lua" "markdown" "markdown_inline"];
