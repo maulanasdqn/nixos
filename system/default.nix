@@ -11,7 +11,6 @@
   nixpkgs = {
     config = {
       allowUnfree = true;
-      permittedInsecurePackages = ["nix-2.15.3"];
     };
   };
 
@@ -34,8 +33,9 @@
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
       WLR_NO_HARDWARE_CURSORS = "1";
+      XCURSOR_SIZE = "42";
       XDG_SESSION_TYPE = "wayland";
-      XCURSOR_THEME = "breeze";
+      XCURSOR_THEME = "Adwita";
     };
   };
 

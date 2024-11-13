@@ -17,6 +17,7 @@
     export PATH="$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$PATH"
     export PATH="$HOME/.nix-profile/sbin:/nix/var/nix/profiles/default/sbin:$PATH"
     export PATH="$HOME/.nix-profile/libexec:$PATH"
+    export PATH="$HOME/.cargo/bin:$PATH"
     export NIX_PATH=$HOME/.nix-defexpr/channels:$NIX_PATH
     export NODE_OPTIONS=--max_old_space_size=4096
     export DIRENV_LOG_FORMAT=

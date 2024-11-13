@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       main = {
-        font = "Hack Nerd Font:size=11:line-height=16px";
+        font = "Hack Nerd Font:size=11:line-height=20px";
       };
       colors = {
         background = "1f1d2e";

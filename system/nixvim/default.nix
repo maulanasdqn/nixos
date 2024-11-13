@@ -1,10 +1,38 @@
-{
+{pkgs, ...}: {
   programs.nixvim = {
     enable = true;
     globals.mapleader = " ";
+    colorschemes.rose-pine = {
+      enable = true;
+      settings = {
+        before_highlight = "function(group, highlight, palette) end";
+        dark_variant = "moon";
+        dim_inactive_windows = true;
+        enable = {
+          legacy_highlights = false;
+          migrations = true;
+          terminal = false;
+        };
+        extend_background_behind_borders = true;
+        groups = {
+          border = "muted";
+          link = "iris";
+          panel = "surface";
+        };
+        highlight_groups = {};
+        styles = {
+          bold = false;
+          italic = true;
+          transparency = true;
+        };
+        variant = "moon";
+      };
+    };
     opts = {
       number = true;
+      winbar = "";
       shiftwidth = 2;
+      laststatus = 0;
       tabstop = 2;
       expandtab = true;
       autoindent = true;
@@ -83,7 +111,12 @@
       nvim-autopairs.enable = true;
       nix.enable = true;
       luasnip.enable = true;
-      nvim-tree.enable = true;
+      nvim-tree = {
+        enable = true;
+        view = {
+          float.enable = true;
+        };
+      };
       trouble.enable = true;
       copilot-vim.enable = true;
       lsp-format.enable = true;
@@ -129,8 +162,31 @@
       treesitter = {
         enable = true;
         settings = {
-          indent.enable = true;
-          ensure_installed = ["nix" "tsx" "typescript" "javascript" "json" "lua" "markdown" "markdown_inline"];
+          auto_install = true;
+          ensure_installed = ["nix" "tsx" "javascript" "astro" "css" "html" "json" "lua" "python" "yaml"];
+          highlight = {
+            additional_vim_regex_highlighting = true;
+            custom_captures = {};
+            disable = [];
+            enable = true;
+          };
+          ignore_install = [];
+          incremental_selection = {
+            enable = true;
+            keymaps = {
+              init_selection = false;
+              node_decremental = "grm";
+              node_incremental = "grn";
+              scope_incremental = "grc";
+            };
+          };
+          indent = {
+            enable = true;
+          };
+          parser_install_dir = {
+            __raw = "vim.fs.joinpath(vim.fn.stdpath('data'), 'treesitter')";
+          };
+          sync_install = false;
         };
       };
       cmp = {
@@ -174,6 +230,21 @@
           tailwindcss.enable = true;
           eslint.enable = true;
           volar.enable = true;
+          rust_analyzer = {
+            enable = true;
+            autostart = true;
+            installCargo = true;
+            installRustc = true;
+            cargoPackage = pkgs.cargo;
+            settings = {
+              diagnostics = {
+                enable = true;
+              };
+              cargo = {
+                allFeatures = true;
+              };
+            };
+          };
         };
       };
     };

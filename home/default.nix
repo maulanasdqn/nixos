@@ -16,5 +16,6 @@
     ./foot
     ./wofi
     ./vscode
+    ./rust
   ];
 }
