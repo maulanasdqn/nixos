@@ -233,9 +233,6 @@
           rust_analyzer = {
             enable = true;
             autostart = true;
-            installCargo = true;
-            installRustc = true;
-            cargoPackage = pkgs.cargo;
             settings = {
               diagnostics = {
                 enable = true;

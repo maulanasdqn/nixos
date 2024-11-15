@@ -8,5 +8,6 @@
     ./printing
     ./redis
     ./postgresql
+    ./tlp
   ];
 }

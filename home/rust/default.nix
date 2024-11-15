@@ -3,18 +3,8 @@
   config,
   ...
 }: {
-  program.rust = {
-    enable = true;
-    package = pkgs.rustup;
-  };
-
   home.packages = [
-    pkgs.cargo
     pkgs.rustup
-    pkgs.cargo-edit
-    pkgs.cargo-deny
-    pkgs.cargo-watch
-    pkgs.rust-analyzer
   ];
 
   home.sessionVariables = {
