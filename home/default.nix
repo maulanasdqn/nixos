@@ -5,6 +5,7 @@
   programs.home-manager.enable = true;
   imports = [
     ./zsh
+    ./eww
     ./git
     ./tmux
     ./direnv

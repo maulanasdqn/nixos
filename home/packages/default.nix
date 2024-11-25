@@ -37,5 +37,6 @@
     fzf
     brightnessctl
     alsa-utils
+    nodePackages.yarn
   ];
 }

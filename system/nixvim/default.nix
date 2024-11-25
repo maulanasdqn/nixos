@@ -104,6 +104,24 @@
         mode = "n";
         options.silent = true;
       }
+      {
+        action = "<cmd>Telescope find_files<CR>";
+        key = "<leader>s";
+        mode = "n";
+        options.silent = true;
+      }
+      {
+        action = "<cmd>Telescope live_grep<CR>";
+        key = "<leader>S";
+        mode = "n";
+        options.silent = true;
+      }
+      {
+        action = "<cmd>Telescope buffers<CR>";
+        key = "<leader>b";
+        mode = "n";
+        options.silent = true;
+      }
     ];
 
     plugins = {
@@ -118,10 +136,20 @@
         };
       };
       trouble.enable = true;
-      copilot-vim.enable = true;
+      telescope = {
+        enable = true;
+        extensions = {
+          file-browser.enable = true;
+          fzf-native.enable = true;
+          fzy-native.enable = true;
+          live-grep-args.enable = true;
+          media-files.enable = true;
+        };
+      };
       lsp-format.enable = true;
       lspkind.enable = true;
       lspkind.cmp.enable = true;
+      codeium-vim.enable = true;
       cmp-nvim-lsp.enable = true;
       cmp-nvim-lsp-document-symbol.enable = true;
       cmp-nvim-lsp-signature-help.enable = true;
@@ -137,7 +165,7 @@
         settings = {
           format_on_save = {
             lspFallback = true;
-            timeoutMs = 500;
+            timeoutMs = 5000;
           };
           formatters_by_ft = {
             liquidsoap = ["liquidsoap-prettier"];
