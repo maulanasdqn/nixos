@@ -5,7 +5,10 @@
     settings = {
       source = "${pkgs.writeText "rose-pine.conf" (builtins.readFile "/home/ms/.config/nix/config/home/hyprland/rose-pine.conf")}";
 
-      monitor = "eDP-1, preferred, 2194x0, 1.6";
+      monitor = [
+        "eDP-1, preferred, 2194x0, 1.6"
+        "eDP-1, addreserved, 0, 0, 48, 0"
+      ];
       "exec" = "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'";
 
       xwayland = {
@@ -14,9 +17,15 @@
 
       "exec-once" = [
         "dunst"
-        "swaybg -i $HOME/Downloads/wall.png"
-        "waybar"
+        "swaybg -i $HOME/Downloads/wall.jpg"
+        "hyprctl setcursor Adwaita 24"
+        "eww daemon"
+        "eww open bar"
       ];
+
+      debug = {
+        disable_logs = false;
+      };
 
       input = {
         follow_mouse = 1;

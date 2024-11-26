@@ -31,22 +31,22 @@
 
       (box :class "slider_box" :orientation "v" :vexpand false :hexpand false
         (box :space-evenly false
-            (label :class "slider_icon" :text "")
+            (label :class "slider_icon" :text "")
             (scale :min 1 :max 101 :width 315 :class "brightness_slider" :value brightness :onchange "brightnessctl set {}%" :height 10)
         )
         (box :space-evenly false
-          (label :class "slider_icon" :text "墳")
+          (label :class "slider_icon" :text "")
           (scale :min 1 :max 101 :width 315 :class "volume_slider" :value volume :onchange "pamixer --set-volume $(echo {} | sed 's/[.].*$//')")
         )
         (box :space-evenly false
-          (label :class "slider_icon" :text "")
+          (label :class "slider_icon" :text "")
           (scale :min 1 :max 101 :width 315 :class "micvolume_slider" :value micvolume :onchange "pamixer --set-volume $(echo {} | sed 's/[.].*$//') --source 1")
         )
       )
-      (box :class "sysinfo_box" :orientation "h" :vexpand true :spacing 15 
-        (mem :thickness 12 :icon "")
-        (cpu :thickness 12 :icon "")
-        (disk :thickness 12 :icon "")
+      (box :class "sysinfo_box" :orientation "h" :vexpand true :spacing 8
+        (mem  :thickness 8 :icon "")
+        (cpu  :thickness 8 :icon "")
+        (disk :thickness 8 :icon "")
       )
     )
     (box :class "notification_box"
@@ -65,7 +65,7 @@
 
 ;; ━━━ MEMORY ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 (defwidget dashbutton[]
-  (button :class "reg-btn dashbutton" :onclick "eww open dashboard --toggle" "舘")
+  (button :class "reg-btn dashbutton" :onclick "eww open dashboard --toggle" "")
 )
 
 
@@ -111,7 +111,6 @@
 
 
 ;; ━━━ WIFI ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-(defvar wifi "{}")
 (defpoll wifi :interval "30s" "./scripts/wifi.sh")
 
 (defwidget wifi []
@@ -125,7 +124,6 @@
 )
 
 ;; ━━━ BATTERY ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-(defvar battery "{}")
 (defpoll battery :interval "60s" "./scripts/battery.sh")
 
 (defwidget battery []
@@ -183,10 +181,10 @@
                 :tooltip "${dateVar}"
     (box :orientation "v" :hexpand false :vexpand false :space-evenly false :class "clock"
     (button		:class "date"
-                :onclick ""	"${hour}")
+              :onclick ""	"${hour}")
 
     (button		:class "date"
-                :onclick ""	"${minute}")
+              :onclick ""	"${minute}")
     )
   )
 )
@@ -222,18 +220,19 @@
              :onchange "brightnessctl set {}%"))))
 (defwidget launch []
   (button		:class "reg-btn launchbutton"
-                :hexpand true
-                :onclick "wofi --show run --xoffset=1670 --yoffset=12 --width=230px --height=984 --style=$HOME/.config/wofi.css --term=footclient --prompt=Run &" "")
+            :hexpand true
+            :onclick "wofi --show run --term=footclient --prompt=Run &" "")
 )
 
 (defwidget powerbutton []
   (eventbox :cursor "hand"
   (button		:class "reg-btn powerbutton"
-                :onclick "eww open powermenu --toggle &"	"")
+            :onclick "eww open powermenu --toggle &"	"")
   )
 )
-                                                  (defwidget powermenucontent []
-                                                  (box :orientation "h"
+
+(defwidget powermenucontent []
+(box :orientation "h"
   :class "powermenu-container"
   (box :class "shutdown-btn-box"
        :orientation "h"
@@ -254,7 +253,7 @@
     (button :class "btn"
             :tooltip "Suspend"
             :onclick "systemctl suspend"
-      "")
+      "")
     )
   )
 )
@@ -276,7 +275,7 @@
 (defwindow dashboard
   :monitor 0
   :geometry (geometry 
-  :height "1080px" 
+  :height "1124px" 
   :width "350px"
   :x "48px"
   :y "0px"
@@ -288,7 +287,7 @@
 (defwindow bar
   :monitor 0
   :exclusive false 
-  :geometry (geometry :height "1080px" :x "-4px" :y "0px"
+  :geometry (geometry :height "1124px" :x "-6px" :y "0px"
   :width "52px"
   :anchor "top left")
   :stacking "fg"

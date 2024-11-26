@@ -17,6 +17,7 @@
   environment = {
     variables = {EDITOR = "vim";};
     systemPackages = [
+      pkgs.adwaita-icon-theme
       pkgs.vim
       pkgs.curl
       pkgs.git
@@ -35,7 +36,9 @@
       WLR_NO_HARDWARE_CURSORS = "1";
       XCURSOR_SIZE = "42";
       XDG_SESSION_TYPE = "wayland";
-      XCURSOR_THEME = "Adwita";
+      XCURSOR_THEME = "Adwaita";
+      HYPRCURSOR_THEME = "Adwaita";
+      HYPRCURSOR_SIZE = "24";
     };
   };
 
@@ -45,24 +48,6 @@
     enable = true;
     enableSSHSupport = true;
   };
-
-  #fileSystems = {
-  #  "/home/ms/HDD" = {
-  #    device = "/dev/sda1";
-  #    fsType = "ntfs-3g";
-  #    options = ["rw" "uid=1000"];
-  #  };
-  #  "/home/ms/HDD2" = {
-  #    device = "/dev/sdb1";
-  #    fsType = "ntfs-3g";
-  #    options = ["rw" "uid=1000"];
-  #  };
-  #  "/home/ms/NVME" = {
-  #    device = "/dev/nvme0n1p3";
-  #    fsType = "ntfs-3g";
-  #    options = ["rw" "uid=1000"];
-  #  };
-  #};
 
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];

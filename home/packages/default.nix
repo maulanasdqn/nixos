@@ -14,6 +14,7 @@
     unrar
     lsof
     discord
+    lua
     microsoft-edge
     gparted
     neofetch
