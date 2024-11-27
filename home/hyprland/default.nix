@@ -43,8 +43,8 @@
       general = {
         gaps_in = 6;
         gaps_out = 12;
-        border_size = 1;
-        "col.active_border" = "$rose";
+        border_size = 3;
+        "col.active_border" = "$foam";
         "col.inactive_border" = "$muted";
         layout = "dwindle";
       };

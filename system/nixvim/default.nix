@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{
   programs.nixvim = {
     enable = true;
     globals.mapleader = " ";
@@ -6,26 +6,51 @@
       enable = true;
       settings = {
         before_highlight = "function(group, highlight, palette) end";
-        dark_variant = "moon";
+        dark_variant = "main";
         dim_inactive_windows = true;
         enable = {
           legacy_highlights = false;
           migrations = true;
-          terminal = false;
+          terminal = true;
         };
-        extend_background_behind_borders = true;
+        extend_background_behind_borders = false;
         groups = {
           border = "muted";
           link = "iris";
           panel = "surface";
+
+          error = "love";
+          hint = "iris";
+          info = "foam";
+          note = "pine";
+          todo = "rose";
+          warn = "gold";
+
+          git_add = "foam";
+          git_change = "rose";
+          git_delete = "love";
+          git_dirty = "rose";
+          git_ignore = "muted";
+          git_merge = "iris";
+          git_rename = "pine";
+          git_stage = "iris";
+          git_text = "rose";
+          git_untracked = "subtle";
+
+          h1 = "iris";
+          h2 = "foam";
+          h3 = "rose";
+          h4 = "gold";
+          h5 = "pine";
+          h6 = "foam";
         };
         highlight_groups = {};
         styles = {
-          bold = false;
+          bold = true;
           italic = true;
           transparency = true;
         };
-        variant = "moon";
+        variant = "main";
       };
     };
     opts = {
@@ -125,6 +150,9 @@
     ];
 
     plugins = {
+      noice = {
+        enable = true;
+      };
       web-devicons.enable = true;
       nvim-autopairs.enable = true;
       nix.enable = true;
@@ -134,6 +162,9 @@
         view = {
           float.enable = true;
         };
+      };
+      lualine = {
+        enable = false;
       };
       trouble.enable = true;
       telescope = {
@@ -261,6 +292,8 @@
           rust_analyzer = {
             enable = true;
             autostart = true;
+            installRustc = false;
+            installCargo = false;
             settings = {
               diagnostics = {
                 enable = true;
