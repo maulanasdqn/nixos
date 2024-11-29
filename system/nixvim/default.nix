@@ -152,6 +152,24 @@
     plugins = {
       noice = {
         enable = true;
+        config = {
+          presets = {};
+          routes = {};
+          notify = {
+            background_color = "#282c34";
+            border = {
+              style = "rounded";
+              color = "#61afef";
+              width = 2;
+            };
+            padding = {
+              top = 2;
+              bottom = 2;
+              left = 4;
+              right = 4;
+            };
+          };
+        };
       };
       web-devicons.enable = true;
       nvim-autopairs.enable = true;

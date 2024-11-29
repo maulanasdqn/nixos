@@ -1,4 +1,4 @@
-{
+{inputs, ...}: {
   home.username = "ms";
   home.homeDirectory = "/home/ms";
   home.stateVersion = "24.05";
@@ -18,5 +18,6 @@
     ./wofi
     ./vscode
     ./rust
+    inputs.nix-colors.homeManagerModules.default
   ];
 }
