@@ -18,6 +18,5 @@
     ./wofi
     ./vscode
     ./rust
-    inputs.nix-colors.homeManagerModules.default
   ];
 }
