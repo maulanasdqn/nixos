@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     postman
+    networkmanagerapplet
     nodejs
     eza
     htop

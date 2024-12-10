@@ -35,6 +35,7 @@
     nixpkgs,
     home-manager,
     nixvim,
+    nix-colors,
     ...
   } @ inputs: {
     nixosConfigurations = {
@@ -43,13 +44,9 @@
         specialArgs = {inherit inputs;};
         modules = [
           ./system
+          ./home
           nixvim.nixosModules.nixvim
           home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.ms = import ./home;
-          }
         ];
       };
     };

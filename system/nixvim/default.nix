@@ -2,7 +2,57 @@
   programs.nixvim = {
     enable = true;
     globals.mapleader = " ";
-    colorschemes = import ./colorschemes/rose-pine.nix;
+    colorschemes.rose-pine = {
+      enable = true;
+      settings = {
+        before_highlight = "function(group, highlight, palette) end";
+        dark_variant = "main";
+        dim_inactive_windows = true;
+        enable = {
+          legacy_highlights = false;
+          migrations = true;
+          terminal = true;
+        };
+        extend_background_behind_borders = false;
+        groups = {
+          border = "muted";
+          link = "iris";
+          panel = "surface";
+
+          error = "love";
+          hint = "iris";
+          info = "foam";
+          note = "pine";
+          todo = "rose";
+          warn = "gold";
+
+          git_add = "foam";
+          git_change = "rose";
+          git_delete = "love";
+          git_dirty = "rose";
+          git_ignore = "muted";
+          git_merge = "iris";
+          git_rename = "pine";
+          git_stage = "iris";
+          git_text = "rose";
+          git_untracked = "subtle";
+
+          h1 = "iris";
+          h2 = "foam";
+          h3 = "rose";
+          h4 = "gold";
+          h5 = "pine";
+          h6 = "foam";
+        };
+        highlight_groups = {};
+        styles = {
+          bold = true;
+          italic = true;
+          transparency = true;
+        };
+        variant = "main";
+      };
+    };
     opts = {
       number = true;
       winbar = "";
@@ -102,12 +152,41 @@
     plugins = {
       noice = {
         enable = true;
-        extraOptions = {
-          views = {
-            notify = {
-              border = {
-                style = "rounded";
-                color = "#61afef";
+        settings = {
+          cmdline = {
+            enabled = true;
+            view = "cmdline_popup";
+            opts = {};
+            format = {
+              cmdline = {
+                pattern = "^:";
+                icon = "";
+                lang = "vim";
+              };
+              search_down = {
+                kind = "search";
+                pattern = "^/";
+                icon = " ";
+                lang = "regex";
+              };
+              search_up = {
+                kind = "search";
+                pattern = "^%?";
+                icon = " ";
+                lang = "regex";
+              };
+              filter = {
+                pattern = "^:%s*!";
+                icon = "$";
+                lang = "bash";
+              };
+              help = {
+                pattern = "^:%s*he?l?p?%s+";
+                icon = "";
+              };
+              input = {
+                view = "cmdline_input";
+                icon = "󰥻 ";
               };
             };
           };

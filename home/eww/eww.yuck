@@ -114,11 +114,12 @@
 (defpoll wifi :interval "30s" "./scripts/wifi.sh")
 
 (defwidget wifi []
- (box :vexpand false :hexpand false :orientation "v"
-   (label :text {wifi.icon}
-          :limit-width 10
-          :tooltip {wifi.status}
-          :class "wifi"
+  (box :vexpand false :hexpand false :orientation "v"
+    (label :text {wifi.icon}
+           :limit-width 10
+           :tooltip {wifi.status}
+           :class "wifi"
+           :on-click "nm-applet"
     )
   )
 )

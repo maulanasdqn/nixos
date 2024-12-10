@@ -21,6 +21,7 @@
         "hyprctl setcursor Adwaita 24"
         "eww daemon"
         "eww open bar"
+        "nm-applet"
       ];
 
       debug = {
@@ -122,6 +123,8 @@
 
       bind = [
         "SUPER,Return,exec,foot"
+        "SUPER,s,exec,slack"
+        "SUPER,b,exec,microsoft-edge"
         "SUPERSHIFT,Q,killactive,"
         "SUPER,V,togglefloating,"
         "SUPER,C,exec,grimblast --notify copy screen --propmt=RUN,"

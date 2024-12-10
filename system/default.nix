@@ -27,10 +27,11 @@
       pkgs.libgcc
       pkgs.gnumake
       pkgs.cmake
+      pkgs.openssl
+      pkgs.pkg-config
       pkgs.extra-cmake-modules
       inputs.alejandra.defaultPackage.${pkgs.system}
       inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
-      inputs.nix-colors.homeManagerModules.default
     ];
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
@@ -40,6 +41,7 @@
       XCURSOR_THEME = "Adwaita";
       HYPRCURSOR_THEME = "Adwaita";
       HYPRCURSOR_SIZE = "24";
+      PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
     };
   };
 
