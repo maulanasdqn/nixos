@@ -3,7 +3,6 @@
     eww
     pamixer
     brightnessctl
-    (nerdfonts.override {fonts = ["JetBrainsMono"];})
   ];
 
   home.file.".config/eww/eww.scss".source = ./eww.scss;

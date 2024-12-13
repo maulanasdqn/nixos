@@ -1,6 +1,8 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     postman
+    surrealdb
+    insomnia
     networkmanagerapplet
     nodejs
     eza
