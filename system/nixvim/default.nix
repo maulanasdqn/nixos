@@ -3,10 +3,10 @@
     enable = true;
     globals.mapleader = " ";
     colorschemes.rose-pine = {
-      enable = true;
+      enable = false;
       settings = {
         before_highlight = "function(group, highlight, palette) end";
-        dark_variant = "main";
+        dark_variant = "dawn";
         dim_inactive_windows = true;
         enable = {
           legacy_highlights = false;
@@ -48,7 +48,7 @@
         styles = {
           bold = true;
           italic = true;
-          transparency = true;
+          transparency = false;
         };
         variant = "main";
       };

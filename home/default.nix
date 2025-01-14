@@ -1,8 +1,4 @@
 {
-  inputs,
-  lib,
-  ...
-}: {
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.users.ms = {
@@ -11,7 +7,6 @@
     home.stateVersion = "24.05";
     programs.home-manager.enable = true;
     imports = [
-      (import ./colorscheme {inherit inputs lib;})
       ./zsh
       ./eww
       ./git

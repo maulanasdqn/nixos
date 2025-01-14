@@ -2,8 +2,6 @@
   home.packages = with pkgs; [
     postman
     surrealdb
-    insomnia
-    networkmanagerapplet
     nodejs
     eza
     htop
@@ -22,15 +20,11 @@
     gparted
     neofetch
     zoom-us
-    dmenu
-    figma-linux
     pavucontrol
     obs-studio
-    pcmanfm
-    mpv
+    vlc
     pcsx2
     gcc
-    distrobox
     openssl
     prettierd
     blueman
@@ -42,5 +36,6 @@
     brightnessctl
     alsa-utils
     nodePackages.yarn
+    google-chrome
   ];
 }

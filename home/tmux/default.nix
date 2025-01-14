@@ -13,6 +13,7 @@
         set -g @rose_pine_bar_bg_disable 'on'
         set -g @rose_pine_host on
         set -g mouse on
+        bind n new-window
       '';
     }
   ];
