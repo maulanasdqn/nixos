@@ -32,7 +32,6 @@
     nixpkgs,
     home-manager,
     nixvim,
-    nix-colors,
     ...
   } @ inputs: {
     nixosConfigurations = {

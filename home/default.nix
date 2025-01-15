@@ -16,7 +16,6 @@
       ./packages
       ./hyprland
       ./dunst
-      ./waybar
       ./foot
       ./wofi
       ./vscode

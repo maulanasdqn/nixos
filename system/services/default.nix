@@ -2,7 +2,7 @@
   imports = [
     ./xserver
     ./greetd
-    ./pipewire
+    ./sound
     ./mysql
     ./openssh
     ./printing

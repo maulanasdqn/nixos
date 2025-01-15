@@ -77,7 +77,6 @@
     ./network
     ./locale
     ./timezone
-    ./sound
     ./users
     ./security
     ./shell

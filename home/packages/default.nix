@@ -36,6 +36,5 @@
     brightnessctl
     alsa-utils
     nodePackages.yarn
-    google-chrome
   ];
 }
