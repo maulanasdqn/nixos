@@ -2,10 +2,10 @@
   services = {
     power-profiles-daemon.enable = false;
     xserver = {
-      enable = false;
+      enable = true;
       displayManager.lightdm.enable = false;
       displayManager.gdm.enable = false;
-      desktopManager.gnome.enable = false;
+      desktopManager.gnome.enable = true;
       desktopManager.xfce.enable = false;
       desktopManager.xterm.enable = false;
       synaptics = {

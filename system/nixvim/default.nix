@@ -3,7 +3,7 @@
     enable = true;
     globals.mapleader = " ";
     colorschemes.rose-pine = {
-      enable = false;
+      enable = true;
       settings = {
         before_highlight = "function(group, highlight, palette) end";
         dark_variant = "dawn";
@@ -230,6 +230,7 @@
       cmp-spell.enable = true;
       cmp-dictionary.enable = true;
       cmp-treesitter.enable = true;
+      wakatime.enable = true;
       conform-nvim = {
         enable = true;
         settings = {

@@ -2,7 +2,6 @@
   home.packages = with pkgs; [
     postman
     surrealdb
-    nodejs
     eza
     htop
     fd
@@ -35,6 +34,6 @@
     fzf
     brightnessctl
     alsa-utils
-    nodePackages.yarn
+    dbeaver-bin
   ];
 }

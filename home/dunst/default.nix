@@ -22,9 +22,9 @@
         icon_position = "off";
         startup_notification = "false";
         corner_radius = 12;
-        frame_color = "#524f67"; # Rose Pine's muted gray
-        background = "#191724"; # Rose Pine's background
-        foreground = "#e0def4"; # Rose Pine's text color
+        frame_color = "#524f67";
+        background = "#191724";
+        foreground = "#e0def4";
         timeout = 2;
       };
     };

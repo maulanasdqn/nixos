@@ -4,8 +4,8 @@
   ...
 }: {
   virtualisation = {
-    libvirtd = {enable = true;};
-    docker = {enable = true;};
+    libvirtd.enable = true;
+    docker.enable = true;
   };
 
   nixpkgs = {
@@ -51,6 +51,8 @@
     enable = true;
     enableSSHSupport = true;
   };
+
+  programs.virt-manager.enable = true;
 
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];

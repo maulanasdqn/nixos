@@ -7,7 +7,7 @@
 
       monitor = [
         "eDP-1, preferred, 2194x0, 1.6"
-        "eDP-1, addreserved, 0, 0, 48, 0"
+        "eDP-1, addreserved, 0, 0, 52, 0"
       ];
       "exec" = "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'";
 
@@ -21,7 +21,6 @@
         "hyprctl setcursor Adwaita 24"
         "eww daemon"
         "eww open bar"
-        "nm-applet"
       ];
 
       debug = {
