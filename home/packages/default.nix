@@ -34,6 +34,5 @@
     fzf
     brightnessctl
     alsa-utils
-    dbeaver-bin
   ];
 }

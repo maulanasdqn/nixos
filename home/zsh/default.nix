@@ -14,6 +14,7 @@
     export XKB_DEFAULT_OPTIONS=caps:escape
     export PATH="$HOME/.local/bin:$PATH"
     export NIX_REMOTE=daemon
+    export NIXPKGS_ALLOW_UNFREE=1
     export PATH="$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$PATH"
     export PATH="$HOME/.nix-profile/sbin:/nix/var/nix/profiles/default/sbin:$PATH"
     export PATH="$HOME/.nix-profile/libexec:$PATH"

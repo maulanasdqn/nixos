@@ -219,7 +219,6 @@
       lsp-format.enable = true;
       lspkind.enable = true;
       lspkind.cmp.enable = true;
-      codeium-vim.enable = true;
       cmp-nvim-lsp.enable = true;
       cmp-nvim-lsp-document-symbol.enable = true;
       cmp-nvim-lsp-signature-help.enable = true;

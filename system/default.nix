@@ -1,16 +1,31 @@
 {
   pkgs,
   inputs,
+  lib,
   ...
 }: {
   virtualisation = {
     libvirtd.enable = true;
-    docker.enable = true;
+    podman = {
+      enable = true;
+      dockerCompat = true;
+    };
+
+    oci-containers = {
+      backend = "podman";
+      containers = {
+        open-webui = import ./containers/open-webui.nix;
+      };
+    };
   };
 
   nixpkgs = {
     config = {
       allowUnfree = true;
+      allowUnfreePredicate = pkg:
+        builtins.elem (lib.getName pkg) [
+          "codeium"
+        ];
     };
   };
 

@@ -1,5 +1,6 @@
 {
   imports = [
+    ./open-webui
     ./ollama
     ./xserver
     ./greetd

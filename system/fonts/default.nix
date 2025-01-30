@@ -14,8 +14,8 @@
   fonts.fontconfig = {
     useEmbeddedBitmaps = true;
     defaultFonts = {
-      serif = ["Ubuntu"];
-      sansSerif = ["Ubuntu"];
+      serif = ["Noto"];
+      sansSerif = ["Noto"];
       monospace = ["Hack Nerd Font Mono"];
     };
   };
