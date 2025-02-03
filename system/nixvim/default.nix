@@ -1,6 +1,6 @@
 {
   programs.nixvim = {
-    enable = true;
+    enable = false;
     globals.mapleader = " ";
     colorschemes.rose-pine = {
       enable = true;
@@ -150,6 +150,55 @@
     ];
 
     plugins = {
+      copilot-vim = {
+        enable = true;
+        autoLoad = true;
+      };
+      avante = {
+        enable = true;
+        autoLoad = true;
+        settings = {
+          openai = {
+            endpoint = "https://api.openai.com/v1";
+            max_tokens = 4096;
+            model = "gpt-4o";
+            temperature = 0;
+          };
+          diff = {
+            autojump = true;
+            debug = false;
+            list_opener = "copen";
+          };
+          highlights = {
+            diff = {
+              current = "DiffText";
+              incoming = "DiffAdd";
+            };
+          };
+          hints = {
+            enabled = true;
+          };
+          mappings = {
+            diff = {
+              both = "cb";
+              next = "]x";
+              none = "c0";
+              ours = "co";
+              prev = "[x";
+              theirs = "ct";
+            };
+          };
+          provider = "openai";
+          windows = {
+            sidebar_header = {
+              align = "center";
+              rounded = true;
+            };
+            width = 30;
+            wrap = true;
+          };
+        };
+      };
       noice = {
         enable = true;
         settings = {

@@ -34,5 +34,6 @@
     fzf
     brightnessctl
     alsa-utils
+    scrcpy
   ];
 }

@@ -1,7 +1,6 @@
 {
   pkgs,
   inputs,
-  lib,
   ...
 }: {
   virtualisation = {
@@ -22,18 +21,15 @@
   nixpkgs = {
     config = {
       allowUnfree = true;
-      allowUnfreePredicate = pkg:
-        builtins.elem (lib.getName pkg) [
-          "codeium"
-        ];
+      allowUnfreePredicate = _: true;
     };
   };
 
   environment = {
-    variables = {EDITOR = "vim";};
+    variables = {EDITOR = "nvim";};
     systemPackages = [
       pkgs.adwaita-icon-theme
-      pkgs.vim
+      pkgs.neovim
       pkgs.curl
       pkgs.git
       pkgs.wget
@@ -89,6 +85,7 @@
 
   imports = [
     ./fonts
+    ./nixvim
     ./hardware
     ./boot
     ./network
@@ -101,6 +98,5 @@
     ./services
     ./ld
     ./hyprland
-    ./nixvim
   ];
 }
