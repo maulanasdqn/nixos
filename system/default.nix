@@ -26,10 +26,10 @@
   };
 
   environment = {
-    variables = {EDITOR = "nvim";};
+    variables = {EDITOR = "vim";};
     systemPackages = [
       pkgs.adwaita-icon-theme
-      pkgs.neovim
+      pkgs.vim
       pkgs.curl
       pkgs.git
       pkgs.wget

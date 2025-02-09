@@ -1,6 +1,6 @@
 {
   programs.nixvim = {
-    enable = false;
+    enable = true;
     globals.mapleader = " ";
     colorschemes.rose-pine = {
       enable = true;
@@ -150,10 +150,6 @@
     ];
 
     plugins = {
-      copilot-vim = {
-        enable = true;
-        autoLoad = true;
-      };
       avante = {
         enable = true;
         autoLoad = true;

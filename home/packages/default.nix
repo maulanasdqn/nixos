@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     postman
-    surrealdb
     eza
     htop
     fd
@@ -15,10 +14,8 @@
     lsof
     discord
     lua
-    microsoft-edge
     gparted
     neofetch
-    zoom-us
     pavucontrol
     obs-studio
     vlc
@@ -35,5 +32,6 @@
     brightnessctl
     alsa-utils
     scrcpy
+    firefox
   ];
 }

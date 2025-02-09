@@ -4,7 +4,6 @@
   programs.tmux.plugins = with pkgs.tmuxPlugins; [
     sensible
     yank
-    resurrect
     {
       plugin = rose-pine;
       extraConfig = ''
