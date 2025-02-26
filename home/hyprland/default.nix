@@ -7,7 +7,7 @@
 
       monitor = [
         "eDP-1, preferred, 2194x0, 1.6"
-        "eDP-1, addreserved, 0, 0, 52, 0"
+        #"eDP-1, addreserved, 0, 0, 52, 0"
       ];
       "exec" = "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'";
 
@@ -19,8 +19,8 @@
         "dunst"
         "swaybg -i $HOME/Downloads/wall.jpg"
         "hyprctl setcursor Adwaita 24"
-        "eww daemon"
-        "eww open bar"
+        #"eww daemon"
+        #"eww open bar"
       ];
 
       debug = {
@@ -42,8 +42,8 @@
 
       general = {
         gaps_in = 6;
-        gaps_out = 12;
-        border_size = 3;
+        gaps_out = 10;
+        border_size = 0;
         "col.active_border" = "$foam";
         "col.inactive_border" = "$muted";
         layout = "dwindle";

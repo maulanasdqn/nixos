@@ -35,6 +35,15 @@
       sshCommand = "ssh -i ~/.ssh/id_dot";
     };
   };
+  mungrid = {
+    user = {
+      name = "satuuntuksemuaaja";
+      email = "satu.untuk.semua.aja@gmail.com";
+    };
+    core = {
+      sshCommand = "ssh -i ~/.ssh/id_mungrid";
+    };
+  };
 in {
   home.packages = with pkgs; [git-filter-repo];
   programs.git = {
@@ -57,6 +66,12 @@ in {
       };
     };
     includes = [
+      {
+        condition = "gitdir:~/Development/freelance/mungrid";
+        contents.user = mungrid.user;
+        contents.core = mungrid.core;
+      }
+
       {
         condition = "hasconfig:remote.*.url:git@gitlab.dot.co.id:*/*";
         contents.user = dot.user;
@@ -81,6 +96,11 @@ in {
         condition = "hasconfig:remote.*.url:git@github.com:kunciehub/*";
         contents.user = kuncie.user;
         contents.core = kuncie.core;
+      }
+      {
+        condition = "hasconfig:remote.*.url:git@github.com:satuuntuksemuaaja/*";
+        contents.user = mungrid.user;
+        contents.core = mungrid.core;
       }
     ];
   };

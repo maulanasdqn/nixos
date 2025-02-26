@@ -32,6 +32,15 @@
     brightnessctl
     alsa-utils
     scrcpy
-    firefox
+    google-chrome
+    zig
+    gleam
+    erlang_nox
+    code-cursor
+    pkg-config
+    openssl
+    clockify
+    microsoft-edge
+    libreoffice
   ];
 }

@@ -1,5 +1,6 @@
 {
   home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
   home-manager.users.ms = {
     home.username = "ms";
     home.homeDirectory = "/home/ms";

@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   programs.nixvim = {
     enable = true;
     globals.mapleader = " ";
@@ -150,14 +150,20 @@
     ];
 
     plugins = {
+      codeium-vim = {
+        enable = false;
+        package = pkgs.vimPlugins.codeium-vim;
+      };
       avante = {
         enable = true;
         autoLoad = true;
         settings = {
+          provider = "openai";
           openai = {
-            endpoint = "https://api.openai.com/v1";
+            endpoint = "https://openrouter.ai/api/v1";
             max_tokens = 4096;
-            model = "gpt-4o";
+            model = "anthropic/claude-3.5-haiku";
+            api_key_name = "ANTHROPIC_API_KEY";
             temperature = 0;
           };
           diff = {
@@ -184,7 +190,6 @@
               theirs = "ct";
             };
           };
-          provider = "openai";
           windows = {
             sidebar_header = {
               align = "center";

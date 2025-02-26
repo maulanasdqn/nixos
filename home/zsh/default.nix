@@ -30,6 +30,10 @@
   programs.zsh.shellAliases.clean = "sudo nix-collect-garbage -d";
   programs.zsh.shellAliases.ls = "eza --icons";
   programs.zsh.shellAliases.pn = "pnpm";
+  programs.zsh.shellAliases.pnd = "pnpm dev";
+  programs.zsh.shellAliases.pni = "pnpm install";
+  programs.zsh.shellAliases.pna = "pnpm add";
+  programs.zsh.shellAliases.pnr = "pnpm remove";
   programs.zsh.shellAliases.px = "pnpx";
   programs.zsh.shellAliases.yr = "yarn";
   programs.zsh.shellAliases.bn = "bun";
